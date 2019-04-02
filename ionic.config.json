@@ -1,6 +1,8 @@
 {
   "name": "Marché Coopératif",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "a9073a77"
 }
