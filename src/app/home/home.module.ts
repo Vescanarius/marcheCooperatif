@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 
+import { MarcheSearch } from '../scan-client/scan-client.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,6 +20,6 @@ import { HomePage } from './home.page';
       }
     ])
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, MarcheSearch]
 })
 export class HomePageModule {}
