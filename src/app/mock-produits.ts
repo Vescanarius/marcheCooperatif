@@ -1,6 +1,6 @@
-import { Client } from './client';
+import { Produit } from './produit';
 
-export const CLIENT: Client[] = [
+export const PRODUITS: Produit[] = [
 	{
 		id: 596,
 	  nom: "Courgette",
