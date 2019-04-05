@@ -13,6 +13,12 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
 
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
+import { ClientsService } from './clients.service';
+
 @NgModule({
   declarations: [
       AppComponent,
@@ -23,11 +29,14 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
     BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
   ],
   providers: [
     StatusBar,
     SplashScreen,
     BarcodeScanner,
+    ClientsService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
