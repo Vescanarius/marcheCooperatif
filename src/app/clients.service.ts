@@ -1,13 +1,12 @@
 
 import { Injectable } from '@angular/core';
 import { Client } from './client';
-//import { CLIENTS } from './mock-clients';
+import { CLIENTS } from './mock-clients';
 
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
-import { catchError, map, tap} from 'rxjs/operators';
-import { of } from 'rxjs';
+import { Observable, of} from 'rxjs';
+import { catchError, map, tap, } from 'rxjs/operators';
 
 
 @Injectable()
@@ -31,7 +30,8 @@ export class ClientsService {
     // Retourne le client avec l'identifiant passé en paramètre
     getClient(id: number): Observable<Client> {
         const url = `${this.clientsUrl}/${id}`;
-      return this.http.get<Clients>(url).pipe(
+
+          return this.http.get<Client>(url).pipe(
           tap(_ => this.log (`fetched client id=${id}`)),
           catchError(this.handleError<Client>(`getClient id=${id}`))
       );
