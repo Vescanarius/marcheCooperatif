@@ -7,12 +7,12 @@ import { ClientsService } from '../clients.service';
 @Component({
     selector: 'mcScanClient',
     templateUrl: './scan-client.component.html',
-      styleUrls: [],
+    styleUrls: ['../../theme/materialize.min.css']
 })
 
 export class MarcheSearch implements OnInit, OnDestroy {
 
-  private codeClientScan:number = "";
+  private codeClientScan:number = null;
   client:Client= null;
 
   constructor(
@@ -21,22 +21,22 @@ export class MarcheSearch implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
-
   }
 
   ngOnDestroy() {
   }
 
-
-  scanClient(){
+  rechercheClient(){
     console.log("Début scan");
     this.codeClientScan = 123456789;
     console.log(this.codeClientScan);
 
     this.clientsService.getClient(this.codeClientScan)
-    .subscribe(client => this.client = client);
+    .subscribe( client => this.client = client)
+    console.log("Fin scan");
+  }
 
-    console.log('Vous avez selectionné ' + this.client);
+  scanClient(){
 
-  };
+  }
 }
