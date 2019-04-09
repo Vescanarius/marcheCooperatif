@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({ name: 'DroitsClientPipe' })
 export class DroitsClientPipe implements PipeTransform {
-  transform(auth: boolean):string {
+  transform(auth: boolean) {
     let value:string;
 
     switch (auth) {

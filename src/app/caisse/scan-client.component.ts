@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, OnInit, OnDestroy } from '@angular/core';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
-import { Client } from './client';
+import { Client } from '../client';
 import { ClientsService } from '../clients.service';
 
 
