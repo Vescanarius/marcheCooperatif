@@ -1,6 +1,6 @@
-<div class="row">
-  <div class="col s12 m6">
-    <a (click)="rechercheClient()" class="waves-effect waves-light btn center">Scanner un client</a>
+<div *ngIf="!client" class="row">
+  <div class="col s12 m6 center-align">
+    <a (click)="rechercheClient()" class="waves-effect waves-light btn ">Scanner un client</a>
   </div>
 </div>
 <div *ngIf="client" class="row">
@@ -11,11 +11,15 @@
       </div>
       <div class="card-content">
         <span class="card-title activator grey-text text-darken-4">{{client.nom}} {{client.prenom}}<i class="material-icons right">more_vert</i></span>
-        <p><a href="#">This is a link</a></p>
+        <p><a  class="activator">Plus d'inforamtions</a></p>
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">{{client.nom}} {{client.prenom}}<i class="material-icons right">close</i></span>
         <p>Here is some more information about this product that is only revealed once clicked on.</p>
+      </div>
+      <div class="card-action">
+        <a (click)="retourScan()">Anuler</a>
+        <a >Voir le panier</a>
       </div>
     </div>
   </div>

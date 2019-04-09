@@ -27,15 +27,25 @@ export class MarcheSearch implements OnInit, OnDestroy {
 
   rechercheClient(){
     console.log("Début scan");
-    this.codeClientScan = 123456789;
+    this.codeClientScan = this.scanClient();
     console.log(this.codeClientScan);
 
     this.clientsService.getClient(this.codeClientScan)
     .subscribe( client => this.client = client)
     console.log("Fin scan");
   }
+  retourScan():void{
+    this.client = null;
+    this.codeClientScan = null;
+  }
 
-  scanClient(){
-
+  scanClient():any{
+    this.barcodeScanner.scan().then(barcodeData => {
+      console.log('Barcode data', barcodeData);
+      return barcodeData;
+     }).catch(err => {
+         console.log('Error', err);
+     });
+    
   }
 }

@@ -10,6 +10,8 @@ export const CLIENTS: Client[] = [
 	  telephone: "0696101150",
 	  picture: "https://www.thomasgudin.com/wp-content/uploads/2018/12/thomas-1.jpg",
 	  types: ["caisse"],
-	  created: new Date(),
+		created: new Date(),
+		passages:[null],
+		idFacebook:"tgudin",
 	},
 ];

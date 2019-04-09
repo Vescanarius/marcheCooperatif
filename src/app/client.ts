@@ -8,4 +8,6 @@ export class Client {
   picture: string;
   types: Array<string>;
   created: Date;
+  passages:Array<Date>;
+  idFacebook:string;
 }
