@@ -7,7 +7,6 @@ import { ClientsService } from '../clients.service';
 @Component({
     selector: 'mcScanClient',
     templateUrl: './scan-client.component.html',
-    styleUrls: ['../../theme/materialize.min.css']
 })
 
 export class MarcheSearch implements OnInit, OnDestroy {
