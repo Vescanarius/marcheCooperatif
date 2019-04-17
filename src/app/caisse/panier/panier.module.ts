@@ -21,6 +21,6 @@ import { PanierPage } from './panier.page';
       
     ])
   ],
-  declarations: []
+  declarations: [PanierPage]
 })
 export class PanierPageModule {}
