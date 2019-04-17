@@ -5,7 +5,6 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
 import { CaissePage } from './caisse.page';
-import { PanierPage } from './panier/panier.page';
 
 
 import { MarcheSearch } from './scan-client.component';
