@@ -30,7 +30,6 @@ export class ClientsService {
     // Retourne le client avec l'identifiant passé en paramètre
     getClient(id: number): Observable<Client> {
         const url = `${this.clientsUrl}/${id}`;
-
           return this.http.get<Client>(url).pipe(
           tap(_ => this.log (`fetched client id=${id}`)),
           catchError(this.handleError<Client>(`getClient id=${id}`))

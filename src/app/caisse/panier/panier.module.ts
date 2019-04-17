@@ -4,13 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
-import { CaissePage } from './caisse.page';
-import { PanierPage } from './panier/panier.page';
+import { PanierPage } from './panier.page';
 
-
-import { MarcheSearch } from './scan-client.component';
-
-import { DroitsClientPipe } from './droits-client.pipe';
 
 @NgModule({
   imports: [
@@ -20,14 +15,12 @@ import { DroitsClientPipe } from './droits-client.pipe';
     RouterModule.forChild([
       {
         path: '',
-        component: CaissePage
-      },
-      {
-        path: 'panier/:id',
         component: PanierPage
       },
+      
+      
     ])
   ],
-  declarations: [CaissePage, MarcheSearch, DroitsClientPipe, PanierPage]
+  declarations: []
 })
-export class CaissePageModule {}
+export class PanierPageModule {}

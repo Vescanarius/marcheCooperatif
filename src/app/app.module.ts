@@ -17,10 +17,13 @@ import { InMemoryDataService } from './in-memory-data.service';
 
 import { ClientsService } from './clients.service';
 
+import {PageNotFoundComponent} from './page-not-found.component';
+
 
 @NgModule({
   declarations: [
       AppComponent,
+      PageNotFoundComponent,
 
     ],
   entryComponents: [],
