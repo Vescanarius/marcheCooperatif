@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 
 import { PanierPage } from './panier.page';
+import { PanierService } from './panier.service';
 
 
 @NgModule({
@@ -21,6 +22,9 @@ import { PanierPage } from './panier.page';
       
     ])
   ],
-  declarations: [PanierPage]
+  declarations: [PanierPage],
+  providers: [
+    PanierService,
+  ],
 })
 export class PanierPageModule {}

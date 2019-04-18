@@ -2,8 +2,8 @@ import { Produit } from 'src/app/produit';
 
 export class Panier {
     id: number;
-    created: Date;
+    dateAchat: Date;
     client:Number;
-    produits:Array<Produit>;
+    produitsAchetes:Array<any>;
   }
   

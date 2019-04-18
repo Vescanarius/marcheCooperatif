@@ -9,7 +9,7 @@ import { catchError, map, tap, } from 'rxjs/operators';
 
 
 @Injectable()
-export class ClientsService {
+export class PanierService {
 
     constructor (private http:HttpClient) {};
     private panierUrl = 'api/paniers';
@@ -30,8 +30,8 @@ export class ClientsService {
     getPanier(id: number): Observable<Panier> {
         const url = `${this.panierUrl}/${id}`;
           return this.http.get<Panier>(url).pipe(
-          tap(_ => this.log (`fetched client id=${id}`)),
-          catchError(this.handleError<Panier>(`getClient id=${id}`))
+          tap(_ => this.log (`fetched panier id=${id}`)),
+          catchError(this.handleError<Panier>(`getPanier id=${id}`))
       );
     }
 
