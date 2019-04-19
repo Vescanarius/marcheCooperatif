@@ -38,10 +38,13 @@
           <i class="material-icons">delete_forever</i>
         </a>
       </li>
+    
     </ul>
 
-
-    <add-product-to-panier></add-product-to-panier>
+<div *ngIf="panierClient">
+  <add-product-to-panier></add-product-to-panier>
+</div>
+    
   
 
   </div>

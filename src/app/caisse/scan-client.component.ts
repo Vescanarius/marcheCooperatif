@@ -48,7 +48,6 @@ export class MarcheSearch implements OnInit, OnDestroy {
   }
 
   goEditPanier(client:Client):void{
-   // let link = ['/panier/', this.client.id];
    let link = ['caisse/panier/', this.client.id];
     console.log(link);
 		this.router.navigate(link);

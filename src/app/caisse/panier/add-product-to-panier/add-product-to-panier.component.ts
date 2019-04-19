@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Router } from '@angular/router';
+
 @Component({
 
     selector: 'add-product-to-panier',
@@ -8,7 +10,20 @@ import { Component } from '@angular/core';
 })
 export class AddProductToPanierComponent {
 
+    
+    constructor(
+        private router: Router,
+      ) { }
 
-    addProductToPanier(){}
+
+    addProductToPanier() {
+
+        let link = ['caisse/panier/ajout/'];
+        console.log(link);
+        this.router.navigate(link);
+    }
+
+   
+
 
 }

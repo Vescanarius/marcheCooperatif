@@ -53,10 +53,7 @@ export class PanierPage implements OnInit {
     // si panier cloturé
 
     // Appel du contenu du panier 
-    this.panierService.getPanier(20190400001).pipe(
-      startWith(null),
-      delay(0)
-      )
+    this.panierService.getPanier(20190400001)
       .subscribe(
         panier => this.panierClient = panier,
       );
