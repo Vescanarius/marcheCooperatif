@@ -6,6 +6,9 @@ import { RouterModule } from '@angular/router';
 
 import { PanierPage } from './panier.page';
 import { PanierService } from './panier.service';
+import { ProduitPipeModule } from 'src/app/produits/produits.pipe.module';
+import { TitreProduitComponent } from '../../produits/titreProduit.component';
+
 
 
 @NgModule({
@@ -18,11 +21,11 @@ import { PanierService } from './panier.service';
         path: '',
         component: PanierPage
       },
-      
-      
-    ])
+    ]),
+    ProduitPipeModule.forRoot(),
+    
   ],
-  declarations: [PanierPage],
+  declarations: [PanierPage,TitreProduitComponent,],
   providers: [
     PanierService,
   ],

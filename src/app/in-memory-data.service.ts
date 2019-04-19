@@ -1,5 +1,5 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { PRODUITS } from './mock-produits';
+import { PRODUITS } from './produits/mock-produits';
 import { CLIENTS } from './mock-clients';
 import { PANIERS } from './caisse/panier/mock-panier';
 

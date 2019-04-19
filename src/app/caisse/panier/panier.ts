@@ -1,4 +1,4 @@
-import { Produit } from 'src/app/produit';
+import { Produit } from 'src/app/produits/produit';
 
 export class Panier {
     id: number;

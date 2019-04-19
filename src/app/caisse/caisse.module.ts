@@ -26,8 +26,8 @@ import { DroitsClientPipe } from './droits-client.pipe';
         loadChildren:'./panier/panier.module#PanierPageModule'
 
       },
-    ])
+    ]),
   ],
-  declarations: [CaissePage, MarcheSearch, DroitsClientPipe]
+  declarations: [CaissePage, MarcheSearch, DroitsClientPipe, ]
 })
 export class CaissePageModule {}

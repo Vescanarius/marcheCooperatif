@@ -2,17 +2,16 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({ name: 'DroitsClientPipe' })
 export class DroitsClientPipe implements PipeTransform {
   transform(auth: boolean) {
-    let value:string;
-
+    let value: string;
     switch (auth) {
       case true:
-      value = 'Authorisé.e sur le marché';
-      break;
+        value = 'Authorisé.e sur le marché';
+        break;
       case false:
-      value = 'Interdit.e sur le marché';
-      break;
+        value = 'Interdit.e sur le marché';
+        break;
 
-      return value;
     }
+    return value;
   }
 }
