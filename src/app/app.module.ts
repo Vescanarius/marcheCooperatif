@@ -25,6 +25,7 @@ import { ProduitsService } from './produits/produits.service';
   declarations: [
       AppComponent,
       PageNotFoundComponent,
+      
     ],
   entryComponents: [],
   imports: [
