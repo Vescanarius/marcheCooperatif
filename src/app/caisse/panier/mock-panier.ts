@@ -6,13 +6,13 @@ export const PANIERS: Panier[] = [
 		dateAchat: new Date(),
 		client: 123456789,
 		produitsAchetes: [
-
 			// rangement obligatoire par producteur
 			{
 				id: 596,
 				poids: 0.5,
 				producteur: 156,
 				prixKg: 6,
+				prixPaye: 3,
 			},
 
 			{
@@ -20,6 +20,7 @@ export const PANIERS: Panier[] = [
 				poids: 1.6,
 				producteur: 256,
 				prixKg: 9,
+				prixPaye: 14.4,
 			},
 		]
 

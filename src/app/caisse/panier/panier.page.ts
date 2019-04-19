@@ -8,6 +8,7 @@ import { ProduitsAchetes } from './produitsAchetes';
 import { PanierService } from './panier.service';
 import { ProduitsService } from 'src/app/produits/produits.service';
 import { Produit } from 'src/app/produits/produit';
+import { startWith,delay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-list',
@@ -16,10 +17,12 @@ import { Produit } from 'src/app/produits/produit';
 })
 export class PanierPage implements OnInit {
 
-  client: Client = null;
-  idClient: number = null;
-  panierClient: Panier = null;
-  prixKg:number=null;
+  client: Client ;
+  idClient: number ;
+  panierClient: Panier ;
+  totalPanier: number ;
+  prixProduitAchete:number;
+
 
   constructor(
     private route: ActivatedRoute,
@@ -28,29 +31,39 @@ export class PanierPage implements OnInit {
     private produitsService: ProduitsService,
   ) { }
 
-
-
   ngOnInit(): void {
-
     this.idClient = +this.route.snapshot.params['id'];
 
     // Appel des données client via le service
     this.clientsService.getClient(this.idClient)
-      .subscribe(client => this.client = client);
+      .subscribe({
+        next: client => this.client = client,
+        error: err => console.error('Observer got an error: ' + err),
+        complete:() => this.getPanier(),
+      }
+        );
+
+  }
+
+
+  getPanier(): void {
 
     // appel de l'id du dernier panier du client
 
     // si panier cloturé
 
     // Appel du contenu du panier 
-    this.panierService.getPanier(20190400001)
+    this.panierService.getPanier(20190400001).pipe(
+      startWith(null),
+      delay(0)
+      )
       .subscribe(
         panier => this.panierClient = panier,
       );
-
   }
 
-  getProduitInfo(id: number) {
+
+  getProduitInfo(id: number): void {
     let produitInfo: Produit = null;
     // Appel du contenu de chaque produit 
     this.produitsService.getProduit(id)
@@ -59,16 +72,8 @@ export class PanierPage implements OnInit {
       );
   }
 
+  addProductToPanier() { }
 
-  prixProduitAchete(poids: number, prixkg: number): number {
-    let value: number = null;
-    //console.log(poids, prixkg);
-    value = Number(poids) * Number(prixkg);
-    return value;
-  }
-
-  addProductToPanier() {}
-
-  removeProductFromPanier() {}
+  removeProductFromPanier() { }
 
 }
