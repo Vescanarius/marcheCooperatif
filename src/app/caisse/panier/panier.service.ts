@@ -1,7 +1,6 @@
-
 import { Injectable } from '@angular/core';
-import { Client } from './client';
-import { CLIENTS } from './mock-clients';
+import { Panier } from './panier';
+import { PANIERS } from './mock-panier';
 
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -10,10 +9,10 @@ import { catchError, map, tap, } from 'rxjs/operators';
 
 
 @Injectable()
-export class ClientsService {
+export class PanierService {
 
     constructor (private http:HttpClient) {};
-    private clientsUrl = 'api/clients';
+    private panierUrl = 'api/paniers';
 
     private log(log:string){
         console.info(log);
@@ -28,11 +27,11 @@ export class ClientsService {
     }
 
     // Retourne le client avec l'identifiant passé en paramètre
-    getClient(id: number): Observable<Client> {
-        const url = `${this.clientsUrl}/${id}`;
-          return this.http.get<Client>(url).pipe(
-          tap(_ => this.log (`fetched client id=${id}`)),
-          catchError(this.handleError<Client>(`getClient id=${id}`))
+    getPanier(id: number): Observable<Panier> {
+        const url = `${this.panierUrl}/${id}`;
+          return this.http.get<Panier>(url).pipe(
+          tap(_ => this.log (`fetched panier id=${id}`)),
+          catchError(this.handleError<Panier>(`getPanier id=${id}`))
       );
     }
 

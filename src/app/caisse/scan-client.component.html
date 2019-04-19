@@ -11,7 +11,12 @@
       </div>
       <div class="card-content">
         <span class="card-title activator grey-text text-darken-4">{{client.nom}} {{client.prenom}}<i class="material-icons right">more_vert</i></span>
-        <p><a  class="activator">Plus d'inforamtions</a></p>
+        <div class="green-text accent-4">
+            {{client.droitsMarche | DroitsClientPipe }}
+        </div>
+        <p>
+          <a  class="activator">Plus d'informations</a>
+        </p>
       </div>
       <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">{{client.nom}} {{client.prenom}}<i class="material-icons right">close</i></span>
@@ -19,7 +24,7 @@
       </div>
       <div class="card-action">
         <a (click)="retourScan()">Anuler</a>
-        <a >Voir le panier</a>
+        <a (click)="goEditPanier()">Voir le panier</a>
       </div>
     </div>
   </div>

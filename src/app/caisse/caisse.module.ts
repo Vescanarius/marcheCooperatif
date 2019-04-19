@@ -20,9 +20,14 @@ import { DroitsClientPipe } from './droits-client.pipe';
       {
         path: '',
         component: CaissePage
-      }
-    ])
+      },
+      {
+        path: 'panier/:id',
+        loadChildren:'./panier/panier.module#PanierPageModule'
+
+      },
+    ]),
   ],
-  declarations: [CaissePage, MarcheSearch, DroitsClientPipe]
+  declarations: [CaissePage, MarcheSearch, DroitsClientPipe, ]
 })
 export class CaissePageModule {}

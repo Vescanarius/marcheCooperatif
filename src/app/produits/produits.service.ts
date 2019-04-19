@@ -1,7 +1,7 @@
 
 import { Injectable } from '@angular/core';
-import { Client } from './client';
-import { CLIENTS } from './mock-clients';
+import { Produit } from './produit';
+import { PRODUITS } from './mock-produits';
 
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -10,10 +10,10 @@ import { catchError, map, tap, } from 'rxjs/operators';
 
 
 @Injectable()
-export class ClientsService {
+export class ProduitsService {
 
     constructor (private http:HttpClient) {};
-    private clientsUrl = 'api/clients';
+    private produitsUrl = 'api/produits';
 
     private log(log:string){
         console.info(log);
@@ -28,11 +28,11 @@ export class ClientsService {
     }
 
     // Retourne le client avec l'identifiant passé en paramètre
-    getClient(id: number): Observable<Client> {
-        const url = `${this.clientsUrl}/${id}`;
-          return this.http.get<Client>(url).pipe(
-          tap(_ => this.log (`fetched client id=${id}`)),
-          catchError(this.handleError<Client>(`getClient id=${id}`))
+    getProduit(id: number): Observable<Produit> {
+        const url = `${this.produitsUrl}/${id}`;
+          return this.http.get<Produit>(url).pipe(
+          tap(_ => this.log (`fetched produit id=${id}`)),
+          catchError(this.handleError<Produit>(`getProduit id=${id}`))
       );
     }
 

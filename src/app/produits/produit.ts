@@ -1,7 +1,7 @@
 export class Produit {
   id: number;
   nom: string;
-  producteur: Array<string>;
-  prix: number;
+  producteur: Array<number>;
   created: Date;
+  prixKg: Array<any>;
 }

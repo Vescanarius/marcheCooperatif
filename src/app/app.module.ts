@@ -17,11 +17,15 @@ import { InMemoryDataService } from './in-memory-data.service';
 
 import { ClientsService } from './clients.service';
 
+import {PageNotFoundComponent} from './page-not-found.component';
+import { ProduitsService } from './produits/produits.service';
+
 
 @NgModule({
   declarations: [
       AppComponent,
-
+      PageNotFoundComponent,
+      
     ],
   entryComponents: [],
   imports: [
@@ -30,12 +34,14 @@ import { ClientsService } from './clients.service';
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
+    
   ],
   providers: [
     StatusBar,
     SplashScreen,
     BarcodeScanner,
     ClientsService,
+    ProduitsService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
