@@ -9,7 +9,6 @@ import { PanierService } from './panier.service';
 import { ProduitPipeModule } from 'src/app/produits/produits.pipe.module';
 import { TitreProduitComponent } from '../../produits/titreProduit.component';
 import { MarcheComponent } from 'src/app/loader.component';
-import { AddProductToPanierComponent } from './add-product-to-panier/add-product-to-panier.component';
 import { AddProductModule } from './add-product/add-product.module';
 
 
@@ -35,7 +34,6 @@ import { AddProductModule } from './add-product/add-product.module';
   declarations: [
     PanierPage,
     TitreProduitComponent,
-    AddProductToPanierComponent,
     
   MarcheComponent],
   providers: [

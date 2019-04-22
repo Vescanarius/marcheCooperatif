@@ -9,6 +9,7 @@ import { PanierService } from './panier.service';
 import { ProduitsService } from 'src/app/produits/produits.service';
 import { Produit } from 'src/app/produits/produit';
 import { startWith,delay } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -29,6 +30,7 @@ export class PanierPage implements OnInit {
     private clientsService: ClientsService,
     private panierService: PanierService,
     private produitsService: ProduitsService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -42,7 +44,6 @@ export class PanierPage implements OnInit {
         complete:() => this.getPanier(),
       }
         );
-
   }
 
 
@@ -69,8 +70,13 @@ export class PanierPage implements OnInit {
       );
   }
 
-  addProductToPanier() { }
+  
+  addProductToPanier() {
+    let link = ['caisse/panier/ajout/'];
+    console.log(link);
+    this.router.navigate(link);
+}
 
-  removeProductFromPanier() { }
+
 
 }

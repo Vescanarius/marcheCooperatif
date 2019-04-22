@@ -42,7 +42,11 @@
     </ul>
 
 <div *ngIf="panierClient">
-  <add-product-to-panier></add-product-to-panier>
+  <a  (click)="addProductToPanier()" class="btn-floating btn-large waves-effect waves-light red">
+    <i class="material-icons">add</i>
+</a>
+
+
 </div>
     
   
