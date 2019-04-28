@@ -8,7 +8,7 @@ import { PanierPage } from './panier.page';
 import { PanierService } from './panier.service';
 import { ProduitPipeModule } from 'src/app/produits/produits.pipe.module';
 import { TitreProduitComponent } from '../../produits/titreProduit.component';
-import { MarcheComponent } from 'src/app/loader.component';
+import { MarcheLoaderComponent } from 'src/app/loader.component';
 import { AddProductModule } from './add-product/add-product.module';
 
 
@@ -19,25 +19,26 @@ import { AddProductModule } from './add-product/add-product.module';
     FormsModule,
     IonicModule,
     RouterModule.forChild([
- 
+
       {
         path: '',
-        component: PanierPage
+        component: PanierPage,
+        loadChildren: './add-product/add-product.module#AddProductModule'
       },
-    
-      
+
     ]),
     ProduitPipeModule.forRoot(),
     AddProductModule,
-    
+
   ],
   declarations: [
     PanierPage,
     TitreProduitComponent,
+    MarcheLoaderComponent
     
-  MarcheComponent],
+  ],
   providers: [
     PanierService,
   ],
 })
-export class PanierPageModule {}
+export class PanierPageModule { }

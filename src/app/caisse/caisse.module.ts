@@ -22,6 +22,11 @@ import { DroitsClientPipe } from './droits-client.pipe';
         component: CaissePage
       },
       {
+        path: 'panier',
+        component: CaissePage
+
+      },
+      {
         path: 'panier/:id',
         loadChildren:'./panier/panier.module#PanierPageModule'
 

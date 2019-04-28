@@ -17,20 +17,20 @@
       </div>
       <div class="col s8">
         <h1>Panier de {{client.nom}} {{client.prenom}} du marché coopératif </h1>
-      <p *ngIf="panierClient">
-        le {{panierClient.dateAchat | date: 'dd/MM/yyyy' }}<br/>
-        Total du panier : {{totalPanier}}
-      </p>
+        <p *ngIf="panierClient">
+          le {{panierClient.dateAchat | date: 'dd/MM/yyyy' }}<br />
+          Total du panier : {{totalPanier}}
+        </p>
       </div>
 
     </div>
 
     <ul *ngIf="panierClient" class="collection">
-      
-      <li  *ngFor="let produitAchete of panierClient.produitsAchetes" class="collection-item avatar">
-        <img  src="" alt="" class="circle">
-        <titreProduit [idProduit]="produitAchete.id" ></titreProduit>
-        <p>Poids :  {{produitAchete.poids}} Kg<br>
+
+      <li *ngFor="let produitAchete of panierClient.produitsAchetes" class="collection-item avatar">
+        <img src="" alt="" class="circle">
+        <titreProduit [idProduit]="produitAchete.id"></titreProduit>
+        <p>Poids : {{produitAchete.poids}} Kg<br>
           Prix au Kg : {{produitAchete.prixKg}} €/Kg<br>
           Total : {{produitAchete.prixPaye}} €
         </p>
@@ -38,24 +38,16 @@
           <i class="material-icons">delete_forever</i>
         </a>
       </li>
-    
+
     </ul>
 
-<div *ngIf="panierClient">
-  <a  (click)="addProductToPanier()" class="btn-floating btn-large waves-effect waves-light red">
-    <i class="material-icons">add</i>
-</a>
-
-
-</div>
-    
-  
-
+    <div *ngIf="panierClient">
+      <a (click)="addProductToPanier(client.id)" class="btn-floating btn-large waves-effect waves-light red">
+        <i class="material-icons">add</i>
+      </a>
+    </div>
   </div>
   <div *ngIf="!client" class='center'>
-      <marche-loader></marche-loader>
+    <marche-loader></marche-loader>
   </div>
-
-  
-
 </ion-content>

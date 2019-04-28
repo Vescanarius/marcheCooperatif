@@ -16,4 +16,4 @@ import { Component } from '@angular/core';
     </div>
   `
 })
-export class MarcheComponent {}
+export class MarcheLoaderComponent {}

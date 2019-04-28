@@ -8,7 +8,7 @@ import { ProduitsAchetes } from './produitsAchetes';
 import { PanierService } from './panier.service';
 import { ProduitsService } from 'src/app/produits/produits.service';
 import { Produit } from 'src/app/produits/produit';
-import { startWith,delay } from 'rxjs/operators';
+import { startWith, delay } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,13 +16,13 @@ import { Router } from '@angular/router';
   templateUrl: 'panier.page.html',
   styleUrls: ['panier.page.scss']
 })
-export class PanierPage implements OnInit {
+export class PanierPage implements OnInit { 
 
-  client: Client ;
-  idClient: number ;
-  panierClient: Panier ;
-  totalPanier: number ;
-  prixProduitAchete:number;
+  client: Client;
+  idClient: number;
+  panierClient: Panier;
+  totalPanier: number;
+  prixProduitAchete: number;
 
 
   constructor(
@@ -41,9 +41,9 @@ export class PanierPage implements OnInit {
       .subscribe({
         next: client => this.client = client,
         error: err => console.error('Observer got an error: ' + err),
-        complete:() => this.getPanier(),
+        complete: () => this.getPanier(),
       }
-        );
+      );
   }
 
 
@@ -70,12 +70,15 @@ export class PanierPage implements OnInit {
       );
   }
 
-  
-  addProductToPanier() {
-    let link = ['caisse/panier/ajout/'];
+
+  addProductToPanier(id) {
+    let link = ['caisse/panier/' + id + '/ajout/'];
     console.log(link);
     this.router.navigate(link);
-}
+  }
+  removeProductFromPanier() {
+    
+  }
 
 
 
