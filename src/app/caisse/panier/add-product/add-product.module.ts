@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 
 // This Module's Components
 import { AddProductComponent } from './add-product.component';
+import { ChoixProducteurModule } from '../choix-producteur/choix-producteur.module'; 
 
 
 @NgModule({
@@ -14,9 +15,10 @@ import { AddProductComponent } from './add-product.component';
         CommonModule,
         FormsModule,
         IonicModule,
+        ChoixProducteurModule,
         RouterModule.forChild([
             {
-                path: 'ajout',
+                path: 'ajout/:idPanier',
                 component: AddProductComponent
             },
         ]),

@@ -34,7 +34,7 @@ export class PanierPage implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.idClient = +this.route.snapshot.params['id'];
+    this.idClient = this.route.snapshot.params['id'];
 
     // Appel des données client via le service
     this.clientsService.getClient(this.idClient)
@@ -50,11 +50,13 @@ export class PanierPage implements OnInit {
   getPanier(): void {
 
     // appel de l'id du dernier panier du client
+    let idPanier :number = 20190400001
 
     // si panier cloturé
 
     // Appel du contenu du panier 
-    this.panierService.getPanier(20190400001)
+     
+    this.panierService.getPanier(idPanier)
       .subscribe(
         panier => this.panierClient = panier,
       );
@@ -71,8 +73,8 @@ export class PanierPage implements OnInit {
   }
 
 
-  addProductToPanier(id) {
-    let link = ['caisse/panier/' + id + '/ajout/'];
+  addProductToPanier(id, idPanier) {
+    let link = ['caisse/panier/' + id + '/ajout/'+ idPanier];
     console.log(link);
     this.router.navigate(link);
   }

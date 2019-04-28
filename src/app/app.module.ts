@@ -19,6 +19,7 @@ import { ClientsService } from './clients.service';
 
 import {PageNotFoundComponent} from './page-not-found.component';
 import { ProduitsService } from './produits/produits.service';
+import { ProducteurService } from './producteur.service';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { ProduitsService } from './produits/produits.service';
     BarcodeScanner,
     ClientsService,
     ProduitsService,
+    ProducteurService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

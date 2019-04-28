@@ -1,0 +1,13 @@
+
+
+
+<div *ngIf="producteurs">
+
+<h1>Choix du producteur :</h1>
+
+    <div class="collection">
+        <a *ngFor="let producteur of producteurs" (click)='selectProducteur(producteur.id)' class="collection-item">
+            <span class="badge">></span>{{producteur.nom}}
+        </a>
+    </div>
+</div>

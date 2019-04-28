@@ -19,13 +19,11 @@ import { AddProductModule } from './add-product/add-product.module';
     FormsModule,
     IonicModule,
     RouterModule.forChild([
-
       {
         path: '',
         component: PanierPage,
         loadChildren: './add-product/add-product.module#AddProductModule'
       },
-
     ]),
     ProduitPipeModule.forRoot(),
     AddProductModule,
@@ -35,7 +33,6 @@ import { AddProductModule } from './add-product/add-product.module';
     PanierPage,
     TitreProduitComponent,
     MarcheLoaderComponent
-    
   ],
   providers: [
     PanierService,

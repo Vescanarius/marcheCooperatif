@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
+
 @Component({
     selector: 'add-product',
     templateUrl: 'add-product.component.html',
@@ -8,10 +9,11 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class AddProductComponent implements OnInit {
 
+     //idClient = this.route.snapshot.params['id'];
+
     constructor(
     ) { }
-
-
+    
     ngOnInit(): void {
 
     }
